@@ -168,10 +168,34 @@ curseforgeCategory:
   MCreator: MCreator
   Magic: Magic
   Map Based: Sulla base della mappa
+  Map and Information: Mappe e informazioni
+  Medieval: Medievale
+  Mini Game: Mini-giochi
+  Miscellaneous: Varie
+  Mod Support: Supporto mod
+  Modded World: Mondo moddato
+  Modern: Moderno
+  Multiplayer: Multigiocatore
+  Parkour: Parkour
+  Photo Realistic: Fotorealistico
+  Puzzle: Puzzle
   QoL: QoL
+  Quests: Missioni
+  Redstone: Redstone
+  Sci-Fi: Fantascienza
+  Server Utility: Utilità server
   Skyblock: SkyBlock
+  Small / Light: Piccolo / Leggero
   Steampunk: Steampunk
+  Storage: Archiviazione
+  Survival: Sopravvivenza
+  Tech: Tecnologia
+  Technology: Tecnologia
+  Traditional: Tradizionale
+  Twitch Integration: Integrazione Twitch
+  Utility & QoL: Utilità e QoL
   Vanilla+: Vanilla+
+  World Gen: Generazione mondo
 dataMigration:
   apply: Applica impostazioni
   directoryCriteriaHint: Assicurati che la nuova posizione della directory sia una directory VUOTA!
@@ -341,9 +365,15 @@ feedback:
   discord: Discord
   discordDescription: Unisciti al canale Discord
   discordJoin: Unisciti
+  generateReport: Genera rapporto
+  generateSaveAs: Salva il rapporto in
   github: Problema Github
   githubDescription: Apri un problema Github per dire il tuo pensiero
   githubOpenIssue: Github
+  hint: >-
+    Clicca il pulsante per creare il rapporto e contattare il team di sviluppo.
+    Il rapporto conterrà le informazioni del tuo dispositivo incluso il tipo di
+    sistema operativo, versione, nome utente (nel tuo OS), ecc.
   kook: Kook
   kookDescription: Kook è un'app alternativa per Discord per gli utenti della Cina continentale
   name: Feedback
@@ -838,6 +868,7 @@ mod:
   openLink: Apri l'url della mod {url}
   search: Cerca Mod
   searchOnCurseforge: Cerca {name} in curseforge
+  searchOnMcWiki: Cerca {name} nell'enciclopedia MC
   searchOnModrinth: Cerca {name} in Modrinth
   showDirectory: Mostra la directory delle mod
   showFile: Mostra il percorso della mod {file}
@@ -853,6 +884,7 @@ modFilter:
   disabledOnly: Mostra solo le mod disabilitate
   hasUpdateOnly: Solo lo spettacolo ha mod di aggiornamento
   incompatibleOnly: Mostra solo mod incompatibili
+  source: Fonte
   unusedOnly: Mostra solo mod biblioteche inutilizzate
 modInstall:
   archived: >-
@@ -1050,6 +1082,8 @@ modrinth:
   followedProjects: Seguiti progetti
   followers: Seguaci
   gallery: Galleria
+  modpackSource:
+    source: Fonte
   gameVersions:
     name: Versioni del gioco
   headers:
@@ -1620,6 +1654,7 @@ task:
   available: Disponibile
   cancelled: Annullato
   clear: Cancella attività completate
+  compatible: Il formato {format} è compatibile con {version}
   connection:
     connected: Connesso
     free: Libero
@@ -1636,6 +1671,7 @@ task:
     title: Elimina texturepack
   dropHint: Trascinare e rilasciare la cartella/zip texture qui per importare.
   empty: Nessuna attività in esecuzione
+  enable: "Texturepack inclusi: {count}"
   failed: Falitto
   import: Importazione di texturepack
   incompatible: >-
@@ -1651,6 +1687,7 @@ task:
   selected: Texturepack preferiti
   showFile: Aprite il texturepack {file} nella cartella
   showInCurseforge: Mostra {name} su curseforge
+  unselected: Texturepack non selezionati
 theme:
   selectImage: Scegli Immagine
   selectMusic: Scegli Musica
@@ -1833,3 +1870,26 @@ versionType:
   name: Status
   release: Release
 'yes': Si
+
+curseforgeCard: {}
+gameServer:
+  title: Elenco server di gioco
+  subtitle: Gestisci e connettiti ai tuoi server di gioco
+  servers: Server
+  connect: Connetti
+  connected: Connesso al server
+  error: Impossibile caricare l'elenco dei server
+  empty: Nessun server di gioco
+  emptyHint: Nessun server di gioco trovato. Prova ad aggiornare l'elenco.
+  noServers: Nessun server disponibile in questa regione
+  mods: Mod
+  modpack: Modpack
+  installingMods: Installazione mod del server...
+  players: Giocatori
+  cpu: CPU
+  ram: RAM
+  status:
+    running: In esecuzione
+    stopped: Fermato
+action: Azione
+loading: Caricamento...

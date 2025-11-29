@@ -860,6 +860,7 @@ mod:
   toUpdate: '{count} оновлень'
   ungroup: Розгрупувати
 modFilter:
+  source: Джерело
   clear: Очистити фільтр
   dependenciesInstallOnly: Показувати лише відсутні залежності модів
   disabledOnly: Показувати лише вимкнені моди
@@ -1056,6 +1057,8 @@ modrinth:
   followedProjects: Відстежувані проєкти
   followers: Підписників
   gallery: Галерея
+  modpackSource:
+    source: Джерело
   gameVersions:
     name: Версії гри
   headers:
@@ -1843,3 +1846,25 @@ versionType:
   name: Статус
   release: Випуск
 'yes': Так
+
+gameServer:
+  title: Список ігрових серверів
+  subtitle: Керування та підключення до ігрових серверів
+  servers: Сервери
+  connect: Підключитися
+  connected: Підключено до сервера
+  error: Не вдалося завантажити список серверів
+  empty: Немає ігрових серверів
+  emptyHint: Ігрові сервери не знайдено. Спробуйте оновити список.
+  noServers: У цьому регіоні немає доступних серверів
+  mods: Моди
+  modpack: Модпак
+  installingMods: Встановлення модів сервера...
+  players: Гравці
+  cpu: CPU
+  ram: RAM
+  status:
+    running: Працює
+    stopped: Зупинено
+action: Дія
+loading: Завантаження...

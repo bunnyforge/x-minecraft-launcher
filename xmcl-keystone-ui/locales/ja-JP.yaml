@@ -38,6 +38,7 @@ HomeJavaIssueDialog:
   optionAutoDownload:
     message: ランチャーはMojangのソースからJavaをダウンロードし、インストールします。
     name: 自動的にダウンロード
+  optionManualDownload: {}
   optionSelectJava:
     message: ランチャーはJavaを見つけられない可能性があります。ランチャーにJavaの場所を明示することもできます。
     name: あなたのコンピューターの中からJavaを選択
@@ -229,6 +230,7 @@ diagnosis:
   missingAssetsIndex:
     message: ランチャーがアセットインデックスをダウンロードします。
     name: '{version} 用のアセットインデックスファイルが見つかりません。'
+  missingAuthlibInjector: {}
   missingJava:
     message: クリックして問題を処理します。
     name: Minecraftを立ち上げるためのJavaが見つかりません!
@@ -756,6 +758,7 @@ mod:
   toUpdate: '{count} 個のアップデート'
   ungroup: グループ化
 modFilter:
+  source: ソース
   clear: クリアフィルター
   dependenciesInstallOnly: 見逃された依存関係のMODのみを表示します
   disabledOnly: 障害のあるMODのみを表示します
@@ -948,6 +951,8 @@ modrinth:
   followedProjects: プロジェクトに従った
   followers: フォロワー
   gallery: ギャラリー
+  modpackSource:
+    source: ソース
   gameVersions:
     name: ゲームバージョン
   headers:
@@ -1202,6 +1207,8 @@ search:
 server:
   acceptingMinecraftVersion: Minecraftバージョンを使用中
   creationHint: サーバーアドレスを入力し、pingしてください
+  delete: {}
+  error: {}
   expectedVersions: サポートされたバージョン
   export: エクスポートサーバー
   exportNoFilesHint: |-
@@ -1626,3 +1633,36 @@ versionType:
   name: ステータス
   release: リリース
 'yes': はい
+
+BaseSetting: {}
+FeedTheBeastCard: {}
+HomeSyncButton: {}
+curseforgeCard: {}
+gameSetting: {}
+launchPreExecuteCommandFailed:
+  description: >-
+    The pre-execute command failed with an error: {error}. Please check the
+    command and try again.
+  title: Pre-Execute Command Failed
+saves: {}
+gameServer:
+  title: ゲームサーバーリスト
+  subtitle: ゲームサーバーを管理して接続する
+  servers: サーバー
+  connect: 接続
+  connected: サーバーに接続しました
+  error: サーバーリストの読み込みに失敗しました
+  empty: ゲームサーバーがありません
+  emptyHint: ゲームサーバーが見つかりません。リストを更新してみてください。
+  noServers: このリージョンには利用可能なサーバーがありません
+  mods: Mods
+  modpack: Modpack
+  installingMods: サーバーModをインストール中...
+  players: プレイヤー
+  cpu: CPU
+  ram: RAM
+  status:
+    running: 稼働中
+    stopped: 停止
+action: アクション
+loading: 読み込み中...

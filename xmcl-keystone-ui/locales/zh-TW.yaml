@@ -776,6 +776,7 @@ mod:
   toUpdate: '{count} 個有新版本'
   ungroup: 取消分組
 modFilter:
+  source: 來源
   clear: 清除篩選
   dependenciesInstallOnly: 僅顯示缺少相依項的模組
   disabledOnly: 僅顯示停用的模組
@@ -968,6 +969,8 @@ modrinth:
   followedProjects: 追蹤的專案
   followers: 追蹤者
   gallery: 圖片展示
+  modpackSource:
+    source: 來源
   gameVersions:
     name: 遊戲版本
   headers:
@@ -1678,3 +1681,25 @@ versionType:
   name: 型別
   release: 穩定版
 'yes': 是
+
+gameServer:
+  title: 遊戲伺服器列表
+  subtitle: 管理並連接到您的遊戲伺服器
+  servers: 伺服器
+  connect: 連接
+  connected: 已連接到伺服器
+  error: 載入伺服器列表失敗
+  empty: 暫無遊戲伺服器
+  emptyHint: 未找到遊戲伺服器，請嘗試重新整理列表。
+  noServers: 該大區暫無可用伺服器
+  mods: 個模組
+  modpack: 整合包
+  installingMods: 正在安裝伺服器模組...
+  players: 玩家
+  cpu: CPU
+  ram: 記憶體
+  status:
+    running: 運行中
+    stopped: 已停止
+action: 操作
+loading: 載入中...

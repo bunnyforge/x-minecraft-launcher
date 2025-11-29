@@ -748,6 +748,7 @@ mod:
   toUpdate: 업데이트 {count}개
   ungroup: 그룹 해제
 modFilter:
+  source: 소스
   clear: 필터 지우기
   dependenciesInstallOnly: 누락된 의존성 모드만 표시
   disabledOnly: 비활성화된 모드만 표시
@@ -940,6 +941,8 @@ modrinth:
   followedProjects: 팔로우한 프로젝트
   followers: 팔로워
   gallery: 갤러리
+  modpackSource:
+    source: 소스
   gameVersions:
     name: 게임 버전
   headers:
@@ -1628,3 +1631,25 @@ versionType:
   name: 상태
   release: 정식
 'yes': 예
+
+gameServer:
+  title: 게임 서버 목록
+  subtitle: 게임 서버를 관리하고 연결하세요
+  servers: 서버
+  connect: 연결
+  connected: 서버에 연결됨
+  error: 서버 목록을 불러오지 못했습니다
+  empty: 게임 서버 없음
+  emptyHint: 게임 서버를 찾을 수 없습니다. 목록을 새로고침해 보세요.
+  noServers: 이 지역에 사용 가능한 서버가 없습니다
+  mods: 모드
+  modpack: 모드팩
+  installingMods: 서버 모드 설치 중...
+  players: 플레이어
+  cpu: CPU
+  ram: RAM
+  status:
+    running: 실행 중
+    stopped: 중지됨
+action: 작업
+loading: 로딩 중...

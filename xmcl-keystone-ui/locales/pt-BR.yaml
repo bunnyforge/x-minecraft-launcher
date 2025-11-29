@@ -390,6 +390,7 @@ feedback:
   qqEnterGroup: Entrar
 fileDetail:
   fileSize: Tamanho do arquivo
+  filesize: Tamanho do arquivo
   hash: Hash
 filter: Filtro
 filterLocalOnly: Mostrar apenas instalado
@@ -730,6 +731,7 @@ launchFailed:
   latestLog: Log mais recente
   title: Jogo fechado com código anômalo
 launchPreExecuteCommandFailed:
+  description: "O comando de pré-execução falhou com um erro: {error}. Por favor, verifique o comando e tente novamente."
   title: Falha no comando de pré-execução
 launchStatus:
   assigningMemory: Atribuindo memória
@@ -880,6 +882,7 @@ mod:
   toUpdate: '{count} atualizações'
   ungroup: Sem agrupar
 modFilter:
+  source: Fonte
   clear: Filtro transparente
   dependenciesInstallOnly: Mostrar apenas mods de dependências perdidas
   disabledOnly: Mostrar apenas mods desativados
@@ -1078,6 +1081,8 @@ modrinth:
   followedProjects: Projetos seguidos
   followers: Seguidores
   gallery: Galeria
+  modpackSource:
+    source: Fonte
   gameVersions:
     name: Versões do Jogo
   headers:
@@ -1353,6 +1358,8 @@ screenshots:
   playSequence: Reproduzir em ordem
 search:
   favorate: Coleção
+  local: Instalado
+  market: Mercado de Mods
 server:
   acceptingMinecraftVersion: Aceitando Versão do Minecraft
   creationHint: Preencha o endereço do servidor e faça o ping no servidor
@@ -1849,3 +1856,25 @@ versionType:
   name: Status
   release: Lançamento
 'yes': Sim
+
+gameServer:
+  title: Lista de Servidores de Jogo
+  subtitle: Gerencie e conecte-se aos seus servidores de jogo
+  servers: Servidores
+  connect: Conectar
+  connected: Conectado ao servidor
+  error: Falha ao carregar lista de servidores
+  empty: Nenhum Servidor de Jogo
+  emptyHint: Nenhum servidor de jogo encontrado. Tente atualizar a lista.
+  noServers: Nenhum servidor disponível nesta região
+  mods: Mods
+  modpack: Modpack
+  installingMods: Instalando mods do servidor...
+  players: Jogadores
+  cpu: CPU
+  ram: RAM
+  status:
+    running: Em execução
+    stopped: Parado
+action: Ação
+loading: Carregando...

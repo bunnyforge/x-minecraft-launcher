@@ -52,6 +52,7 @@ HomeJavaIssueDialog:
   optionAutoDownload:
     message: Лаунчер скачает и установит Java из источника Mojang для вас.
     name: Автоматическая загрузка
+  optionManualDownload: {}
   optionSelectJava:
     message: >-
       Возможно, лаунчер не нашёл вашу версию Java. Вы можете указать лаунчеру,
@@ -268,6 +269,7 @@ diagnosis:
   missingAssetsIndex:
     message: Лаунчер скачает файл индекса ресурсов для вас
     name: Отсутствует файл индекса ресурсов версии {version}.
+  missingAuthlibInjector: {}
   missingJava:
     message: Нажмите, чтобы решить эту проблему
     name: Не удаётся найти Java для запуска Minecraft!
@@ -872,6 +874,7 @@ mod:
   toUpdate: '{count} для обновления'
   ungroup: Негруппинг
 modFilter:
+  source: Источник
   clear: Чистый фильтр
   dependenciesInstallOnly: Только показывать пропущенные моды зависимости
   disabledOnly: Только показывать отключенные моды
@@ -1072,6 +1075,8 @@ modrinth:
   followedProjects: Следовал проектам
   followers: Подписчики
   gallery: Галерея
+  modpackSource:
+    source: Источник
   gameVersions:
     name: Версии игры
   headers:
@@ -1358,6 +1363,8 @@ search:
 server:
   acceptingMinecraftVersion: Принятие версии Minecraft
   creationHint: Пожалуйста, заполните адрес сервера и протестируйте сервер
+  delete: {}
+  error: {}
   expectedVersions: Поддерживаемые версии
   export: Экспортный сервер
   exportNoFilesHint: >-
@@ -1872,3 +1879,31 @@ versionType:
   name: Статус
   release: Релиз
 'yes': Да
+
+BaseSetting: {}
+FeedTheBeastCard: {}
+HomeSyncButton: {}
+curseforgeCard: {}
+gameSetting: {}
+saves: {}
+gameServer:
+  title: Список игровых серверов
+  subtitle: Управление и подключение к игровым серверам
+  servers: Серверы
+  connect: Подключиться
+  connected: Подключено к серверу
+  error: Не удалось загрузить список серверов
+  empty: Нет игровых серверов
+  emptyHint: Игровые серверы не найдены. Попробуйте обновить список.
+  noServers: В этом регионе нет доступных серверов
+  mods: Моды
+  modpack: Модпак
+  installingMods: Установка модов сервера...
+  players: Игроки
+  cpu: CPU
+  ram: RAM
+  status:
+    running: Работает
+    stopped: Остановлен
+action: Действие
+loading: Загрузка...

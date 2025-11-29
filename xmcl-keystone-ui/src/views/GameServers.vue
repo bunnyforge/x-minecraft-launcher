@@ -12,7 +12,7 @@
       </div>
       <div class="flex flex-col">
         <span class="text-h5 font-bold tracking-tight">{{ t('gameServer.title') }}</span>
-        <span class="text-sm text-gray-500">Manage and connect to your game servers</span>
+        <span class="text-sm text-gray-500">{{ t('gameServer.subtitle') }}</span>
       </div>
       <v-spacer />
       <v-btn
@@ -117,7 +117,7 @@
           {{ t('gameServer.empty') }}
         </h3>
         <p class="mt-2 text-gray-500">
-          No game servers found. Try refreshing the list.
+          {{ t('gameServer.emptyHint') }}
         </p>
         <v-btn
           color="primary"

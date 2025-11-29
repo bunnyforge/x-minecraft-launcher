@@ -114,7 +114,7 @@
               >
                 people
               </v-icon>
-              <span>{{ t('server.players') }}</span>
+              <span>{{ t('gameServer.players') }}</span>
             </div>
             <span>{{ server.metrics.onlinePlayers }} / {{ server.metrics.maxPlayers }}</span>
           </div>

@@ -133,18 +133,57 @@ curseforge:
 curseforgeCard: {}
 curseforgeCategory:
   API and Library: API ANDS LIBRARIS
+  Addons: ADDONZ
+  Adventure: ADVENTUR
+  Adventure and RPG: ADVENTUR AN RPG
   Animated: ANIMATIOZ
+  Armor, Tools, and Weapons: ARMUR, TOOLZ, AN WEAPONZ
+  Armor， Tools， and Weapons: ARMUR, TOOLZ, AN WEAPONZ
+  Combat / PvP: COMBAT / PVP
+  Cosmetic: COSMETIK
+  Creation: CREASHUN
+  Data Packs: DATA PAKZ
+  Education: EDUCASHUN
+  Exploration: EXPLORASHUN
+  Extra Large: XTRA LARG
+  FTB Official Pack: FTB OFFISHUL PAK
   Fabric: FABRIC
   FancyMenu: FancyMenu
+  Font Packs: FONT PAKZ
   Food: FUD
+  Game Map: GAEM MAP
   Hardcore: HARDICORE
   MCreator: MCreator
   Magic: MAGIK
+  Map Based: MAP BASD
+  Map and Information: MAP AN INFORMASHUN
+  Medieval: MEDIEVAL
+  Mini Game: MINI GAEM
+  Miscellaneous: MISCELLANEUZ
+  Mod Support: MOD SUPORT
+  Modded World: MODDID WURLD
+  Modern: MODERN
+  Multiplayer: MULTIPLAYR
+  Parkour: PARKOUR
+  Photo Realistic: FOTO REALISTIK
+  Puzzle: PUZZL
   QoL: QOL
+  Quests: QUESTZ
+  Redstone: REDSTON
+  Sci-Fi: SCI-FI
+  Server Utility: SERVR UTILITY
   Skyblock: SKYBLOKS
+  Small / Light: SMOL / LITE
   Steampunk: STEAMPANKS
   Storage: STORAGEZ
+  Survival: SURVIVAL
+  Tech: TEK
+  Technology: TEKNOLOGY
+  Traditional: TRADISHUNL
+  Twitch Integration: TWITCH INTEGRASHUN
+  Utility & QoL: UTILITY AN QOL
   Vanilla+: VANILLA+++
+  World Gen: WURLD GEN
 dataMigration:
   apply: APPLY SETTIN
   directoryCriteriaHint: PLZ MAK SURE UR NEW DIRECTORY LOCASHUN IZ AN EMPTY DIRECTORY!
@@ -321,6 +360,7 @@ feedback:
   qqDescription: 'ENTR TEH FEEDBACK QQ GROUP AN DIRECT TALK WIF AUTHORS. GROUP NUMBR: {number}'
   qqEnterGroup: JOIN
 fileDetail:
+  fileSize: FILE SIEZ
   filesize: FILE SIZE
   hash: HASH
 filter: FILTR
@@ -440,10 +480,13 @@ instance:
   openCrashReportFolder: OPEN CRASH REPORT FOLDR
   openLogFolder: OPEN LOG FOLDR
   playtime: PLAYTIME
+  preExecCommand: PRE-EXEC COMMAND
+  preExecCommandHint: DIS COMMAND WILL RUN BEFORE TEH GAEM LAUNCHZ
   prependCommand: PREPEND COMMAND
   prependCommandHint: DIS WILL PREPEND DIS COMMAND BEFORE ALL TEH LAUNCH COMMANDZ
   requireName: TEH NAYM IZ REQUIRD
   resolution: Window Resolution
+  resolutionEnabled: ENABEL RESOLUSHUN
   resolutionPreset: Resolution Preset
   showInstance: SHOW GAME FOLDR
   useSharedOptions: USE SHARD GAME SETTINGS
@@ -453,6 +496,8 @@ instance:
   versionHint: TEH MINECRAFT VERSHUN OV DIS GAME
   vmOptions: JVM OPSHUNS
   vmOptionsHint: EXTRA ARGUMENTS 2 PAS 2 TEH JVM
+  vmVar: VM VARIABLEZ
+  vmVarHint: VARIABLEZ 2 PAS 2 TEH JVM
   width: Width
 instanceAge:
   older: OLDR
@@ -609,6 +654,10 @@ launchBlocked:
 launchFailed:
   crash: GAME CRASHD!!
   description: THAR IZ NO CRASH REPORT. DIS DIS TEH ERROR LOG AN LATEST LOG.
+  elyByAuthlib:
+    description: FAILD 2 INJECT ELY.BY AUTHLIB. PLZ CHECK UR NETWORK.
+    suggestion: TRY 2 RELAUNCH TEH GAEM OR CHECK UR NETWORK SETTIN.
+    title: ELY.BY AUTHLIB INJECSHUN FAILD
   failedToLaunch: LAUNCH FAILD 2 LAUNCH
   latestLog: LATEST LOG
   title: GAME EXITD WIF ABNORMAL CODE
@@ -619,6 +668,7 @@ launchPreExecuteCommandFailed:
   title: PRE-EXECUTE COMMAND FAILD
 launchStatus:
   assigningMemory: ASSIGNIN MEMS
+  elyByWarning: ELY.BY AUTHLIB WARNIN
   exit: EXIT GAME?
   injectingAuthLib: SETTIN UP THIRD-PARTY AUTHLIB
   launching: LAUNCHIN...
@@ -741,6 +791,7 @@ mod:
   openLink: OPEN TEH MOD URL {url}
   search: SEARCH MODZ
   searchOnCurseforge: SEARCH {name} IN CURSEFORGE
+  searchOnMcWiki: LOOK UP {name} IN TEH MC ENCYCLOPEDIA
   searchOnModrinth: SEARCH {name} IN MODRINTH
   showDirectory: SHOW MODZ DIRECTORY
   showFile: SHOW TEH MOD PATH {file}
@@ -751,12 +802,13 @@ mod:
   toUpdate: '{count} UPDATEZ'
   ungroup: Ungrouping
 modFilter:
-  clear: Clear Filter
-  dependenciesInstallOnly: Only show missed dependencies mods
-  disabledOnly: Only show disabled mods
-  hasUpdateOnly: Only show has update mods
-  incompatibleOnly: Only show incompatible mods
-  unusedOnly: Only show unused libraries mods
+  clear: CLEAR FILTR
+  dependenciesInstallOnly: ONLY SHOW MISD DEPENDENCIEZ MODZ
+  disabledOnly: ONLY SHOW DISABLD MODZ
+  hasUpdateOnly: ONLY SHOW HAS UPDATE MODZ
+  incompatibleOnly: ONLY SHOW INCOMPATIBLE MODZ
+  source: SORCE
+  unusedOnly: ONLY SHOW UNUSD LIBRARIEZ MODZ
 modInstall:
   archived: >-
     {name} HAS BEEN ARCHIVD. {name} WILL NOT RECEIV ANY FURTHR UPDATEZ UNLES TEH
@@ -836,6 +888,7 @@ modpackImportConfirm:
 modrinth:
   browseUrl: OPEN IN BROWSR {url}
   categories:
+    name: KATEGORIEZ
     128x: 128x
     16x: 16x
     256x: 256x
@@ -944,9 +997,11 @@ modrinth:
     unsupported: UNSUPPORTD
   externalResources: EXTERNAL RESOURCEZ
   featuredVersions: FEATURD VERSHUNS
-  followedProjects: Followed Projects
+  followedProjects: FOLLOWD PROJECTZ
   followers: FOLLOWERS
   gallery: GALLERY
+  modpackSource:
+    source: SORCE
   gameVersions:
     name: GAME VERSHUNS
   headers:
@@ -1345,6 +1400,8 @@ setting:
     focus: FOCUS LAYOUT
   layoutDescription: TEH LAYOUT OV TEH LAUNCHR UI
   layoutTitle: LAYOUT
+  linuxEnableDedicatedGPUOptimization: ASSIGN DEDICATD GPU
+  linuxEnableDedicatedGPUOptimizationDescription: DIS OPSHUN WILL ASSIGN DEDICATD GPU 2 MINECRAFT PROCES.
   linuxTitlebar: NATIV TITLE BAR
   linuxTitlebarDescription: USE NATIV LINUX TITLE BAR 4 LAUNCHR
   location: STORE LOCASHUN
@@ -1487,9 +1544,10 @@ tag:
   createSelected: CREATE TAG 4 SELECTD
   newTag: NEW TAG
 task:
+  available: AVAILABL
   cancelled: CANCELLD
   clear: CLEAR FINISHD TASKZ
-  compatible: THE {format} FORMATS IS CAMPATIBLE WIZ {version}
+  compatible: TEH {format} FORMAT IZ COMPATIBL WIF {version}
   connection:
     connected: CONNECTD
     free: FREE
@@ -1498,14 +1556,26 @@ task:
     running: RUNNIN CONNECSHUN
     size: TOTAL COUNT
   connections: NETWORK CONNECSHUNS
-  dropHint: DRAG AND DROPIK THE FALDER/ZIP TEXTUREZ HERE TO IMPORT.
+  delete:
+    content: DIS WILL DELETE TEH TEXTUREPACK FILE FRUM TEH DISK, AN WE WONT BE ABLE 2 RECOVR IT. R U SURE U CAN RECOVR IT?
+    title: DELETE TEXTUREPACK
+  dropHint: DRAG AN DROP TEH FOLDR/ZIP TEXTUREZ HER 2 IMPORT.
   empty: NO RUNNIN TASKZ
+  enable: "TEXTUREPACKZ INCLUDD: {count}"
   failed: FAILD
+  import: IMPORT TEXTUREPACK
+  incompatible: INCOMPATIBL TEXTUREPACK FORMAT ({format}). MATCHIN {accept}. CURRENT {actual}.
+  manage: TEXTUREPACK
   manager: TASK MANAGR
   nTaskRunning: '{count} TASKZ R RUNNIN'
   name: TASK | TASKZ
   pause: PAUSE
+  searchOnCurseforge: SEARCH {name} ON CURSEFORGE
   searchOnModrinth: '@:mod.searchOnModrinth'
+  selected: FAVORIT TEXTUREPACKZ
+  showFile: OPEN TEH TEXTUREPACK {file} IN TEH FOLDR
+  showInCurseforge: SHOW {name} ON CURSEFORGE
+  unselected: UNSELECTD TEXTUREPACKZ
 theme:
   selectImage: SELECT IMAGE
   selectMusic: SELECT MUSIC
@@ -1595,6 +1665,7 @@ upstream:
 
     U CAN STILL UPGRADE, BUT TEH RESULT MITE BE WRONG. PLZ BAKUP UR INSTANCE
     FILEZ.
+  onlyShowCurrentVersion: ONLY SHOW CURRENT VERSHUN
   update: UPDATE
 user:
   accessToken: ACCES TOKEN
@@ -1673,3 +1744,26 @@ versionType:
   name: STATUS
   release: RELEASE
 'yes': 'Yes'
+
+filterLocalOnly: ONLY SHOW INSTALLD
+gameServer:
+  title: GAEM SERVR LIST
+  subtitle: MANAGE AN CONNECT 2 UR GAEM SERVRZ
+  servers: SERVRZ
+  connect: CONNECT
+  connected: CONNECTD 2 SERVR
+  error: FAILD 2 LOAD SERVR LIST
+  empty: NO GAEM SERVRZ
+  emptyHint: NO GAEM SERVRZ FINDZ. TRY REFRESHIN TEH LIST.
+  noServers: NO SERVRZ AVAILABL IN DIS REGION
+  mods: MODZ
+  modpack: MODPACK
+  installingMods: INSTALLIN SERVR MODZ...
+  players: PLAYRS
+  cpu: CPU
+  ram: RAM
+  status:
+    running: RUNNIN
+    stopped: STOPPD
+action: ACSHUN
+loading: LOADIN...

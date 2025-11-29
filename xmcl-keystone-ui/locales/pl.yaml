@@ -153,16 +153,52 @@ curseforgeCategory:
   Adventure and RPG: Przygodowe i RPG
   Animated: Animacja
   Armor, Tools, and Weapons: Pancerz, narzędzia i broń
+  Armor， Tools， and Weapons: Pancerz, narzędzia i broń
   Combat / PvP: Konkursy/PVP
+  Cosmetic: Kosmetyczne
+  Creation: Tryb kreatywny
+  Data Packs: Pakiety danych
+  Education: Edukacja
+  Exploration: Eksploracja
+  Extra Large: Bardzo duży
+  FTB Official Pack: Oficjalny pakiet FTB
   Fabric: Fabric
   FancyMenu: FancyMenu
+  Font Packs: Pakiety czcionek
+  Food: Jedzenie
+  Game Map: Mapy gier
   Hardcore: Hardcore
   MCreator: MCreator
   Magic: Magic
+  Map Based: Oparte na mapach
+  Map and Information: Mapy i informacje
+  Medieval: Średniowieczne
+  Mini Game: Mini gry
+  Miscellaneous: Różne
+  Mod Support: Wsparcie modów
+  Modded World: Zmodyfikowany świat
+  Modern: Nowoczesne
+  Multiplayer: Wieloosobowe
+  Parkour: Parkour
+  Photo Realistic: Fotorealistyczne
+  Puzzle: Puzzle
   QoL: QoL
+  Quests: Questy
+  Redstone: Redstone
+  Sci-Fi: Sci-Fi
+  Server Utility: Narzędzia serwerowe
   Skyblock: SkyBlock
+  Small / Light: Małe / Lekkie
   Steampunk: Steampunk
+  Storage: Przechowywanie
+  Survival: Przetrwanie
+  Tech: Technologia
+  Technology: Technologia
+  Traditional: Tradycyjne
+  Twitch Integration: Integracja z Twitch
+  Utility & QoL: Narzędzia i QoL
   Vanilla+: Vanilla+
+  World Gen: Generowanie świata
 dataMigration:
   apply: Zastosuj ustawienia
   directoryCriteriaHint: Upewnij się, że nowa lokalizacja katalogu to pusty katalog!
@@ -332,9 +368,15 @@ feedback:
   discord: Discord
   discordDescription: Dołącz do kanału Discord
   discordJoin: Dołącz
+  generateReport: Generuj raport
+  generateSaveAs: Zapisz raport do
   github: Problem Github
   githubDescription: Otwórz wątek na Github, aby podzielić się swoimi przemyśleniami
   githubOpenIssue: Github
+  hint: >-
+    Kliknij przycisk, aby utworzyć raport i skontaktować się z zespołem
+    deweloperów. Raport będzie zawierał informacje o urządzeniu, w tym typ
+    systemu operacyjnego, wersję, nazwę użytkownika (w systemie operacyjnym) itp.
   kook: Kook
   kookDescription: >-
     Kook to alternatywna aplikacja dla użytkownika Discord w Chinach
@@ -832,6 +874,7 @@ mod:
   openLink: Otwórz adres url moda {url}
   search: Wyszukiwanie modów
   searchOnCurseforge: Wyszukiwanie {name} w curseforge
+  searchOnMcWiki: Wyszukaj {name} w encyklopedii MC
   searchOnModrinth: Wyszukiwanie {name} w Modrinth
   showDirectory: Pokaż katalog modów
   showFile: Pokaż ścieżkę modów {file}
@@ -847,6 +890,7 @@ modFilter:
   disabledOnly: Pokaż tylko niepełnosprawne mody
   hasUpdateOnly: Tylko show ma mody aktualizacji
   incompatibleOnly: Pokaż tylko niezgodne mody
+  source: Źródło
   unusedOnly: Pokaż tylko niewykorzystane mody bibliotek
 modInstall:
   archived: >-
@@ -1042,6 +1086,8 @@ modrinth:
   followedProjects: Następujące projekty
   followers: Obserwujący
   gallery: Galeria
+  modpackSource:
+    source: Źródło
   gameVersions:
     name: Wersje gier
   headers:
@@ -1055,6 +1101,7 @@ modrinth:
   loginHint: |-
     Operacja wymaga wykonania Modrinth. 
     Launcher otworzy okno przeglądarki do logowania Modrinth.
+  loginTitle: Zaloguj się do Modrinth
   modLoaders:
     name: Mod Loadery
   perPage: Na stronę
@@ -1608,6 +1655,7 @@ task:
   available: Dostępne
   cancelled: Anulowane
   clear: Wyczyść ukończone zadania
+  compatible: Format {format} jest kompatybilny z {version}
   connection:
     connected: Połączony
     free: Darmowy
@@ -1626,6 +1674,10 @@ task:
   empty: Brak uruchomionych zadań
   enable: 'Włączone pakiety tekstur: {count}'
   failed: Nie powiodło się
+  import: Importuj
+  incompatible: >-
+    Niekompatybilny format pakietu tekstur ({format}). Dopasowanie {accept}.
+    Aktualny {actual}.
   manage: Texturpak
   manager: Menedżer zadań
   nTaskRunning: '{count} zadania są uruchomione'
@@ -1634,6 +1686,7 @@ task:
   searchOnCurseforge: Wyszukaj {name} na curseforge
   searchOnModrinth: '@:mod.searchOnModrinth'
   selected: Ulubione paczki tekstur
+  showFile: Pokaż plik
   showInCurseforge: Pokaż {name} na curseforge
   unselected: Niewybrane pakiety tekstur
 theme:
@@ -1649,7 +1702,9 @@ transportType:
   srflx: Kandydat refleksyjny serwera
 turnRegion:
   fr: Francja
+  guangzhou: Guangzhou, Chiny
   hk: Hong Kong
+  liaoning: Liaoning, Chiny
   po: Polska
 tutorial:
   feedbackDescription: >-
@@ -1805,3 +1860,35 @@ userSkin:
   urlNotEmpty: Adres URL skórki nie może być pusty
   urlNotValid: Adres URL skórki jest nieprawidłowy
   useSlim: Użyj modelu Slim
+
+version:
+  checkIntegrity: Check Integrity
+  name: Version | Versions
+  notInstalled: Version is not installed
+versionType:
+  alpha: Alpha
+  beta: Beta
+  name: Status
+  release: Release
+"yes": "Yes"
+gameServer:
+  title: Lista serwerów gier
+  subtitle: Zarządzaj i łącz się ze swoimi serwerami gier
+  servers: Serwery
+  connect: Połącz
+  connected: Połączono z serwerem
+  error: Nie udało się załadować listy serwerów
+  empty: Brak serwerów gier
+  emptyHint: Nie znaleziono serwerów gier. Spróbuj odświeżyć listę.
+  noServers: Brak dostępnych serwerów w tym regionie
+  mods: Mody
+  modpack: Modpack
+  installingMods: Instalowanie modów serwera...
+  players: Gracze
+  cpu: CPU
+  ram: RAM
+  status:
+    running: Działa
+    stopped: Zatrzymany
+action: Akcja
+loading: Ładowanie...

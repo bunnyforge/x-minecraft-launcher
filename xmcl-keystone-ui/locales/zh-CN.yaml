@@ -779,6 +779,7 @@ mod:
   toUpdate: '{count} 个有新版本'
   ungroup: 取消分组
 modFilter:
+  source: 来源
   clear: 清除过滤器
   dependenciesInstallOnly: 仅显示遗漏的依赖项mods
   disabledOnly: 仅显示禁用的mod
@@ -973,6 +974,8 @@ modrinth:
   followedProjects: 关注的项目
   followers: 关注数
   gallery: 图片展示
+  modpackSource:
+    source: 来源
   gameVersions:
     name: 游戏版本
   headers:
@@ -1686,14 +1689,22 @@ versionType:
 'yes': 是
 gameServer:
   title: 游戏服务器列表
+  subtitle: 管理并连接到您的游戏服务器
   servers: 服务器
   connect: 连接
   connected: 已连接到服务器
   error: 加载服务器列表失败
-  empty: 点击刷新加载服务器列表
+  empty: 暂无游戏服务器
+  emptyHint: 未找到游戏服务器，请尝试刷新列表。
   noServers: 该大区暂无可用服务器
   mods: 个模组
   modpack: 整合包
   installingMods: 正在安装服务器模组...
+  players: 玩家
+  cpu: CPU
+  ram: 内存
+  status:
+    running: 运行中
+    stopped: 已停止
 action: 操作
 loading: 加载中...

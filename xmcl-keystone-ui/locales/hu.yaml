@@ -147,6 +147,7 @@ curseforgeCard: {}
 curseforgeCategory:
   API and Library: API-k és könyvtárak
   Addons: Kiegészítők
+  Adventure: Kaland
   Adventure and RPG: Kaland és RPG
   Animated: Animation
   Armor, Tools, and Weapons: Páncélok, szerszámok és fegyverek
@@ -168,10 +169,34 @@ curseforgeCategory:
   MCreator: MCreator
   Magic: Magic
   Map Based: A térkép alapján
+  Map and Information: Térképek és információk
+  Medieval: Középkori
+  Mini Game: Mini játékok
+  Miscellaneous: Egyéb
+  Mod Support: Mod támogatás
+  Modded World: Modolt világ
+  Modern: Modern
+  Multiplayer: Többjátékos
+  Parkour: Parkour
+  Photo Realistic: Fotórealisztikus
+  Puzzle: Rejtvény
   QoL: QoL
+  Quests: Küldetések
+  Redstone: Redstone
+  Sci-Fi: Sci-Fi
+  Server Utility: Szerver eszközök
   Skyblock: SkyBlock
+  Small / Light: Kicsi / Könnyű
   Steampunk: Steampunk
+  Storage: Tárolás
+  Survival: Túlélés
+  Tech: Technológia
+  Technology: Technológia
+  Traditional: Hagyományos
+  Twitch Integration: Twitch integráció
+  Utility & QoL: Segédeszközök és QoL
   Vanilla+: Vanilla+
+  World Gen: Világ generálás
 dataMigration:
   apply: Alkalmazás
   directoryCriteriaHint: Kérlek, győződj meg róla, hogy az új könyvtárhelyed egy ÜRES könyvtár!
@@ -266,6 +291,7 @@ duration:
   day: '{duration} nap | {duration} nap'
   hour: '{duration} óra | {duration} óra'
   minute: '{duration} perc | {duration} perc'
+  name: Időtartam
   'no': 'no'
   second: '{duration} másodperc | {duration} másodperc'
   'yes': Igen, uram.
@@ -301,6 +327,7 @@ errors:
     Hiba a letöltési fájl elérési útvonalának megadásakor. Kérlek, győződj meg
     róla, hogy az Launchernej van írási jogosultsága.
   HeadersTimeoutError: HTTP Fejléc időtúllépés
+  NotFoundError: Az erőforrás nem található
   SocketError: Kiszolgálói foglalathiba
 eula:
   body: A jelölőnégyzet bejelölésével jelzi, hogy beleegyezik a Minecraft {eula}-be.
@@ -330,9 +357,15 @@ feedback:
   discord: Discord
   discordDescription: Csatlakozz Discordra
   discordJoin: Csatlakozás
+  generateReport: Jelentés generálása
+  generateSaveAs: Jelentés mentése ide
   github: Github problémák
   githubDescription: Nyiss egy Github problémát, hogy elmondd a gondolatodat
   githubOpenIssue: Github
+  hint: >-
+    Kattints a gombra a jelentés létrehozásához és a fejlesztői csapat
+    megkereséséhez. A jelentés tartalmazza az eszközöd adatait, beleértve az
+    operációs rendszer típusát, verzióját, felhasználónevet (az OS-ben), stb.
   kook: Kook
   kookDescription: Kook egy alternatív app a Discordra Kínai felhasználóknak
   name: Visszajelzés
@@ -830,6 +863,7 @@ mod:
   openLink: A mod url {url} megnyitása
   search: Modok keresése
   searchOnCurseforge: Keresés {name} a curseforge-on
+  searchOnMcWiki: Keresés {name} az MC enciklopédiában
   searchOnModrinth: Keresés {name} a Modrinth-on
   showDirectory: Modok mappájának megjelenítése
   showFile: A mod elérési útvonalának megjelenítése {file}
@@ -847,6 +881,7 @@ modFilter:
   incompatibleOnly: >-
     Csak az összeegyeztethetetlen vagy hiányzó függőségek hiányzó modokat
     mutatnak
+  source: Forrás
   unusedOnly: Csak a fel nem használt könyvtárak modokat mutatják be
 modInstall:
   archived: >-
@@ -1042,6 +1077,8 @@ modrinth:
   followedProjects: Követett projektek
   followers: Követők
   gallery: Galéria
+  modpackSource:
+    source: Forrás
   gameVersions:
     name: Játék verziók
   headers:
@@ -1446,6 +1483,8 @@ setting:
   disableTelemetryDescription: >-
     Az XMCL összegyűjti a játékindítási és a felhasználói bejelentkezési
     eseményeket.
+  enableDedicatedGPUOptimization: Dedikált GPU hozzárendelése
+  enableDedicatedGPUOptimizationDescription: Ez az opció dedikált GPU-t rendel a Minecraft folyamathoz.
   enableDiscord: Discord státusz engedélyezése
   enableDiscordDescription: Ez folyamatosan frissíti az launcher állapotát a discordra.
   general: Általános
@@ -1502,8 +1541,10 @@ setting:
     dark: Sötét téma
     light: Világos téma
     system: Rendszer téma használata
+  themeExport: Téma exportálása
   themeFont: Betűtípus
   themeFontDescription: Módosítsa az indító betűtípusát.
+  themeImport: Téma importálása
   themeResetFont: Betűtípus visszaállítása
   themeSelectFont: Válassza a Betűtípus lehetőséget
   themeShare: Téma megosztása
@@ -1522,6 +1563,10 @@ settingLabel:
   local: Helyi
   localHint: Ezt a beállítást az aktuális példány módosítja
 setup:
+  account:
+    description: Jelentkezz be a játékfiókodba. Ha nincs fiókod, most kihagyhatod.
+    name: Játékfiók hozzáadása
+    skip: Kihagyás most
   appearance:
     name: '@:setting.appearance'
   dataRoot:
@@ -1612,6 +1657,7 @@ task:
   available: Elérhető
   cancelled: Törölt
   clear: Befejezett folyamatok törlése
+  compatible: A {format} formátum kompatibilis a {version} verzióval
   connection:
     connected: csatlakoztatva
     free: Ingyenes
@@ -1628,6 +1674,7 @@ task:
     title: Texturepack törlése
   dropHint: Húzza ide a mappát/zip textúrákat az importáláshoz.
   empty: Nincs futó folyamat
+  enable: "Tartalmazott texturepackek: {count}"
   failed: Sikertelen
   import: Texturepack importálása
   incompatible: >-
@@ -1657,7 +1704,9 @@ transportType:
   srflx: Kiszolgáló Reflexív jelölt
 turnRegion:
   fr: Franciaország
+  guangzhou: Guangzhou, Kína
   hk: Hong Kong
+  liaoning: Liaoning, Kína
   po: Lengyelország
 tutorial:
   feedbackDescription: >-
@@ -1824,3 +1873,26 @@ versionType:
   name: Státusz
   release: Kiadás
 'yes': Igen
+
+downloadUpdate: Download Update
+gameServer:
+  title: Játékszerver lista
+  subtitle: Kezeld és csatlakozz a játékszervereidhez
+  servers: Szerverek
+  connect: Csatlakozás
+  connected: Csatlakozva a szerverhez
+  error: Nem sikerült betölteni a szerverlistát
+  empty: Nincs játékszerver
+  emptyHint: Nem található játékszerver. Próbáld frissíteni a listát.
+  noServers: Ebben a régióban nincs elérhető szerver
+  mods: Modok
+  modpack: Modpack
+  installingMods: Szerver modok telepítése...
+  players: Játékosok
+  cpu: CPU
+  ram: RAM
+  status:
+    running: Fut
+    stopped: Leállítva
+action: Művelet
+loading: Betöltés...

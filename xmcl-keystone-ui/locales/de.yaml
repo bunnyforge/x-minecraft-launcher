@@ -945,6 +945,7 @@ mod:
   toUpdate: '{count} zu aktualisieren'
   ungroup: Ungruppierung
 modFilter:
+  source: Quelle
   clear: Klaren Filter
   dependenciesInstallOnly: Zeigen Sie nur verpasste Abhängigkeiten Mods
   disabledOnly: Zeigen Sie nur deaktivierte Mods an
@@ -1147,6 +1148,8 @@ modrinth:
   followedProjects: Folgte Projekte
   followers: Abonnenten
   gallery: Galerie
+  modpackSource:
+    source: Quelle
   gameVersions:
     name: Spiel-Versionen
   headers:
@@ -2005,3 +2008,26 @@ versionType:
   name: Zustand.
   release: Freigabe
 'yes': Ja
+
+BaseSetting: {}
+gameServer:
+  title: Spielserver-Liste
+  subtitle: Verwalten und verbinden Sie sich mit Ihren Spielservern
+  servers: Server
+  connect: Verbinden
+  connected: Mit Server verbunden
+  error: Serverliste konnte nicht geladen werden
+  empty: Keine Spielserver
+  emptyHint: Keine Spielserver gefunden. Versuchen Sie, die Liste zu aktualisieren.
+  noServers: Keine Server in dieser Region verfügbar
+  mods: Mods
+  modpack: Modpack
+  installingMods: Server-Mods werden installiert...
+  players: Spieler
+  cpu: CPU
+  ram: RAM
+  status:
+    running: Läuft
+    stopped: Gestoppt
+action: Aktion
+loading: Laden...

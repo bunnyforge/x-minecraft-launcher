@@ -1794,14 +1794,22 @@ versionType:
 "yes": "Yes"
 gameServer:
   title: Game Server List
+  subtitle: Manage and connect to your game servers
   servers: Servers
   connect: Connect
   connected: Connected to server
   error: Failed to load server list
-  empty: Click refresh to load server list
+  empty: No Game Servers
+  emptyHint: No game servers found. Try refreshing the list.
   noServers: No servers available in this region
   mods: Mods
   modpack: Modpack
   installingMods: Installing server mods...
+  players: Players
+  cpu: CPU
+  ram: RAM
+  status:
+    running: Running
+    stopped: Stopped
 action: Action
 loading: Loading...
