@@ -1,6 +1,7 @@
 import { ServiceKey } from './Service'
 
 export interface GameServer {
+  id: number
   name: string
   nodePort: number
   status: string
@@ -11,6 +12,15 @@ export interface GameServer {
   difficulty: string
   pvp: boolean
   viewDistance: number
+  /**
+   * Modrinth projects to install, format: "slug:version_number" or "slug" (for latest)
+   * Multiple projects separated by comma, e.g. "sodium:mc1.21.1-0.6.0-fabric,lithium"
+   */
+  modrinthProjects: string | null
+  /**
+   * Modrinth modpack project id or slug to install
+   */
+  modrinthModpack: string | null
   metrics: {
     cpuUsagePercent: number
     memoryUsagePercent: number

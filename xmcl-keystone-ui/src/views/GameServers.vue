@@ -240,17 +240,25 @@
 
 <script lang="ts" setup>
 import { kInstance } from '@/composables/instance'
+import { kInstances } from '@/composables/instances'
 import { kGameServerList } from '@/composables/gameServerList'
+import { useGameServerModsInstaller } from '@/composables/gameServerModsInstaller'
 import { injection } from '@/util/inject'
-import { GameRegion, InstanceServiceKey } from '@xmcl/runtime-api'
+import { GameRegion, GameServer, InstanceServiceKey } from '@xmcl/runtime-api'
 import { useService } from '@/composables/service'
 import ServerItem from './ServerItem.vue'
 
 const { regions, loading, error, refresh, connectToServer } = injection(kGameServerList)
-const { instance } = injection(kInstance)
-const { editInstance } = useService(InstanceServiceKey)
+const { instance, runtime } = injection(kInstance)
+const { instances, selectedInstance } = injection(kInstances)
+const { createInstance, editInstance } = useService(InstanceServiceKey)
 const { t } = useI18n()
 const router = useRouter()
+
+// Mods installer - 使用现有的 installFromMarket 接口
+const { installServerMods, installServerModpack } = useGameServerModsInstaller(
+  computed(() => instance.value.path)
+)
 
 const snackbar = ref(false)
 const snackbarText = ref('')
@@ -262,31 +270,104 @@ onMounted(() => {
   }
 })
 
-async function onConnectClick(region: GameRegion, server: any) {
+/**
+ * 生成服务器实例的唯一标识
+ * 使用 region.id + server.id 生成
+ */
+function generateServerInstanceId(region: GameRegion, server: GameServer): string {
+  return `server_${region.id}_${server.id}`
+}
+
+async function onConnectClick(region: GameRegion, server: GameServer) {
+  console.log('[GameServer] Connect clicked, server:', server)
+  
   connectingServer.value = server.nodePort
   try {
     const host = connectToServer(region, server)
     const [hostname, port] = host.split(':')
+    const portNum = parseInt(port, 10)
     
-    // 保存服务器信息到实例配置
-    await editInstance({
-      instancePath: instance.value.path,
-      name: server.name, // 使用服务器名称作为实例名称
-      server: {
-        host: hostname,
-        port: parseInt(port, 10),
-      },
-      runtime: {
-        minecraft: server.version,
+    // 如果服务器有 modrinthModpack，优先安装整合包
+    if (server.modrinthModpack) {
+      console.log('[GameServer] Server has modrinthModpack:', server.modrinthModpack)
+      
+      // 安装整合包会自动创建实例、选择实例、跳转到主页
+      const instancePath = await installServerModpack(
+        server.modrinthModpack,
+        hostname,
+        portNum
+      )
+      
+      if (instancePath) {
+        snackbarText.value = `${t('gameServer.connected')}: ${server.name} (${host})`
+        snackbar.value = true
+        console.log('[GameServer] Modpack installed, instance:', instancePath)
+      } else {
+        throw new Error('Failed to install modpack')
       }
-    })
+      return
+    }
+    
+    // 生成服务器实例的唯一 ID
+    const serverInstanceId = generateServerInstanceId(region, server)
+    console.log('[GameServer] Server instance ID:', serverInstanceId)
+    
+    // 构建 runtime 配置（只设置 Minecraft 版本）
+    const runtimeConfig: any = {
+      minecraft: server.version,
+    }
+    
+    // 查找是否已存在该服务器的实例（通过实例文件夹名称匹配）
+    const existingInstance = instances.value.find(inst => inst.path.endsWith(serverInstanceId))
+    
+    let instancePath: string
+    
+    if (existingInstance) {
+      // 已存在，更新实例配置
+      instancePath = existingInstance.path
+      await editInstance({
+        instancePath,
+        name: server.name,
+        server: {
+          host: hostname,
+          port: portNum,
+        },
+        runtime: runtimeConfig,
+      })
+      console.log('[GameServer] Updated existing instance:', instancePath)
+    } else {
+      // 不存在，创建新实例
+      instancePath = await createInstance({
+        name: serverInstanceId,
+        server: {
+          host: hostname,
+          port: portNum,
+        },
+        runtime: runtimeConfig,
+      })
+      // 创建后更新显示名称为服务器名称
+      await editInstance({
+        instancePath,
+        name: server.name,
+      })
+      console.log('[GameServer] Created new instance:', instancePath)
+    }
+    
+    // 切换到该实例
+    selectedInstance.value = instancePath
     
     snackbarText.value = `${t('gameServer.connected')}: ${server.name} (${host})`
     snackbar.value = true
     
-    console.log('Connected to server:', host, 'Version:', server.version)
+    console.log('[GameServer] Connected to server:', host, 'Version:', server.version)
 
-    // 跳转到主页，让用户可以配置模组等内容
+    // 如果服务器有模组，自动调用安装接口（下载进度会在任务管理器中显示）
+    if (server.modrinthProjects) {
+      await nextTick()
+      installServerMods(server, server.version)
+    }
+
+    // 跳转到主页
     router.push('/')
   } catch (e) {
     console.error('Failed to connect to server:', e)

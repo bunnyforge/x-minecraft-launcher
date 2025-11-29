@@ -1692,5 +1692,8 @@ gameServer:
   error: 加载服务器列表失败
   empty: 点击刷新加载服务器列表
   noServers: 该大区暂无可用服务器
+  mods: 个模组
+  modpack: 整合包
+  installingMods: 正在安装服务器模组...
 action: 操作
 loading: 加载中...

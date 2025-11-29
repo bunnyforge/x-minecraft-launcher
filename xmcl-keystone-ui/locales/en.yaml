@@ -1800,5 +1800,8 @@ gameServer:
   error: Failed to load server list
   empty: Click refresh to load server list
   noServers: No servers available in this region
+  mods: Mods
+  modpack: Modpack
+  installingMods: Installing server mods...
 action: Action
 loading: Loading...

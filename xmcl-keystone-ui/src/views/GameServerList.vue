@@ -16,6 +16,30 @@
     </v-card-title>
 
     <v-card-text class="flex-1 overflow-auto">
+      <!-- Installing mods overlay -->
+      <v-overlay
+        :value="installing"
+        absolute
+        class="flex items-center justify-center"
+      >
+        <div class="text-center">
+          <v-progress-circular
+            indeterminate
+            color="primary"
+            size="64"
+          />
+          <p class="mt-4 text-white">
+            {{ t('gameServer.installingMods') }}
+          </p>
+          <p
+            v-if="progress.currentProject"
+            class="text-grey-lighten-1"
+          >
+            {{ progress.current }} / {{ progress.total }} - {{ progress.currentProject }}
+          </p>
+        </div>
+      </v-overlay>
+
       <v-alert
         v-if="error"
         type="error"
@@ -88,7 +112,27 @@
                         >
                           people
                         </v-icon>
-                        {{ server.metrics.onlinePlayers }} / {{ server.metrics.maxPlayers }}
+                        {{ server.metrics.onlinePlayers ?? 0 }} / {{ server.metrics.maxPlayers }}
+                      </v-chip>
+                      <!-- Mods indicator -->
+                      <v-chip
+                        v-if="hasModsOrModpack(server)"
+                        x-small
+                        label
+                        color="primary"
+                      >
+                        <v-icon
+                          x-small
+                          left
+                        >
+                          extension
+                        </v-icon>
+                        <template v-if="server.modrinthModpack">
+                          {{ t('gameServer.modpack') }}
+                        </template>
+                        <template v-else>
+                          {{ getModsCount(server) }} {{ t('gameServer.mods') }}
+                        </template>
                       </v-chip>
                     </div>
                   </v-list-item-subtitle>
@@ -97,6 +141,7 @@
                   <v-btn
                     color="primary"
                     small
+                    :loading="installing"
                     @click.stop="onConnectClick(region, server)"
                   >
                     <v-icon left>
@@ -140,13 +185,20 @@
 import { kInstance } from '@/composables/instance'
 import { injection } from '@/util/inject'
 import { useGameServerList } from '../composables/gameServerList'
-import { GameRegion, InstanceServiceKey } from '@xmcl/runtime-api'
+import { useGameServerModsInstaller, parseModrinthProjects } from '../composables/gameServerModsInstaller'
+import { GameRegion, GameServer, InstanceServiceKey } from '@xmcl/runtime-api'
 import { useService } from '@/composables/service'
 
 const { regions, loading, error, refresh, connectToServer } = useGameServerList()
-const { instance } = injection(kInstance)
+const { instance, runtime } = injection(kInstance)
 const { editInstance } = useService(InstanceServiceKey)
 const { t } = useI18n()
+const { push } = useRouter()
+
+// Mods installer
+const { installing, progress, installServerMods, getModpackInfo } = useGameServerModsInstaller(
+  computed(() => instance.value.path)
+)
 
 onMounted(() => {
   refresh()
@@ -160,11 +212,24 @@ function getServerStatusIcon(status: string) {
   return status === 'RUNNING' ? 'check_circle' : 'cancel'
 }
 
-function onServerClick(region: GameRegion, server: any) {
+function hasModsOrModpack(server: GameServer) {
+  return !!(server.modrinthProjects || server.modrinthModpack)
+}
+
+function getModsCount(server: GameServer) {
+  if (!server.modrinthProjects) return 0
+  return parseModrinthProjects(server.modrinthProjects).length
+}
+
+function onServerClick(region: GameRegion, server: GameServer) {
   console.log('Server clicked:', region.name, server.name)
 }
 
-async function onConnectClick(region: GameRegion, server: any) {
+async function onConnectClick(region: GameRegion, server: GameServer) {
+  console.log('[GameServer] Connect clicked, server:', server)
+  console.log('[GameServer] modrinthProjects:', server.modrinthProjects)
+  console.log('[GameServer] modrinthModpack:', server.modrinthModpack)
+  
   const host = connectToServer(region, server)
   const [hostname, port] = host.split(':')
   
@@ -177,7 +242,28 @@ async function onConnectClick(region: GameRegion, server: any) {
     },
   })
   
-  // 可以在这里添加通知
+  // 如果服务器有整合包，跳转到整合包页面
+  if (server.modrinthModpack) {
+    const modpackInfo = await getModpackInfo(server.modrinthModpack)
+    if (modpackInfo) {
+      // 跳转到 Store 页面查看整合包
+      push(`/store/modrinth/${modpackInfo.project.id}`)
+      return
+    }
+  }
+  
+  // 如果服务器有模组，先安装模组再跳转到 Mods 页面
+  if (server.modrinthProjects) {
+    console.log('[GameServer] Installing mods for server...')
+    const gameVersion = runtime.value.minecraft || '1.21.1'
+    console.log('[GameServer] Using gameVersion:', gameVersion, 'runtime:', runtime.value)
+    const success = await installServerMods(server, gameVersion)
+    console.log('[GameServer] Install result:', success)
+    // 跳转到 Mods 页面
+    push('/mods')
+    return
+  }
+  
   console.log('Connected to server:', host)
 }
 </script>
