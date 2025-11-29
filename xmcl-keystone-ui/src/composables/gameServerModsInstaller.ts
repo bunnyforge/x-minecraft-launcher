@@ -297,11 +297,7 @@ export function useGameServerModsInstaller(instancePath: Ref<string>) {
 
       console.log('[GameServerModpack] Created instance:', instancePath)
 
-      // Update display name to server name
-      await editInstance({
-        instancePath,
-        name: serverName,
-      })
+      // 目录名和实例名称都是 instanceName，无需再更新
 
       // Install modpack files to the instance
       installInstanceFiles({

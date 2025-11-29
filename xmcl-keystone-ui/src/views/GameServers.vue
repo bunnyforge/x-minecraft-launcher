@@ -272,10 +272,10 @@ onMounted(() => {
 
 /**
  * 生成服务器实例的唯一标识
- * 使用 region.id + server.id 生成
+ * 使用 大区名 + 服务名 生成
  */
 function generateServerInstanceId(region: GameRegion, server: GameServer): string {
-  return `server_${region.id}_${server.id}`
+  return `${region.name}_${server.name}`
 }
 
 async function onConnectClick(region: GameRegion, server: GameServer) {
@@ -301,7 +301,7 @@ async function onConnectClick(region: GameRegion, server: GameServer) {
       instancePath = existingInstance.path
       await editInstance({
         instancePath,
-        name: server.name,
+        name: serverInstanceId,  // 保持名称与目录名一致
         server: {
           host: hostname,
           port: portNum,
@@ -323,8 +323,8 @@ async function onConnectClick(region: GameRegion, server: GameServer) {
       
       instancePath = await installServerModpack(
         server.modrinthModpack,
-        serverInstanceId,  // 使用服务器唯一 ID 作为目录名
-        server.name,       // 使用服务器名称作为显示名称
+        serverInstanceId,  // 使用服务器唯一 ID 作为目录名和显示名称
+        serverInstanceId,  // 保持名称与目录名一致
         hostname,
         portNum
       ) || ''
@@ -350,11 +350,7 @@ async function onConnectClick(region: GameRegion, server: GameServer) {
         },
         runtime: runtimeConfig,
       })
-      // 创建后更新显示名称为服务器名称
-      await editInstance({
-        instancePath,
-        name: server.name,
-      })
+      // 目录名和实例名称都是 serverInstanceId，无需再更新
       console.log('[GameServer] Created new instance:', instancePath)
       
       // 切换到该实例
